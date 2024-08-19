@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 350px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .prediction {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="text" name="age"><br>
+            <label>Sex (1 = Male, 0 = Female):</label>
+            <input type="text" name="sex"><br>
+            <label>Chest Pain Type (0, 1, 2, 3):</label>
+            <input type="text" name="cp"><br>
+            <label>Resting Blood Pressure:</label>
+            <input type="text" name="trestbps"><br>
+            <label>Cholesterol:</label>
+            <input type="text" name="chol"><br>
+            <label>Fasting Blood Sugar > 120 mg/dl (1 = True; 0 = False):</label>
+            <input type="text" name="fbs"><br>
+            <label>Resting Electrocardiographic Results (0, 1, 2):</label>
+            <input type="text" name="restecg"><br>
+            <label>Maximum Heart Rate Achieved:</label>
+            <input type="text" name="thalach"><br>
+            <label>Exercise Induced Angina (1 = Yes; 0 = No):</label>
+            <input type="text" name="exang"><br>
+            <label>ST Depression Induced by Exercise Relative to Rest:</label>
+            <input type="text" name="oldpeak"><br>
+            <label>Slope of the Peak Exercise ST Segment (0, 1, 2):</label>
+            <input type="text" name="slope"><br>
+            <label>Number of Major Vessels (0-3) Colored by Flourosopy:</label>
+            <input type="text" name="ca"><br>
+            <label>Thal (3 = Normal; 6 = Fixed Defect; 7 = Reversible Defect):</label>
+            <input type="text" name="thal"><br>
+            
+            <!-- Predict Button -->
+            <input type="submit" value="Predict">
+        </form>
+        
+        <!-- Display the prediction result -->
+        <h2>Prediction:</h2>
+        <div class="prediction">
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+</html>
+
+            
+
